@@ -1,13 +1,13 @@
 /* Adaptation for different screen sizes */
 
-/* General styles for mobile devices */
+/* Мобильные устройства (до 768px) */
 @media (max-width: 768px) {
     body {
         font-size: 14px;
     }
 
     .wrapper {
-        margin: 0 5%;
+        margin: 0 2%;
     }
 
     header {
@@ -23,12 +23,15 @@
     nav {
         padding-right: 0;
         justify-content: center;
-        flex-wrap: wrap;
     }
 
     .nav_bar {
         flex-direction: column;
         align-items: center;
+    }
+
+    .nav_bar li {
+        margin: 5px 0;
     }
 
     .home,
@@ -43,10 +46,11 @@
     .main_section {
         flex-direction: column;
         text-align: center;
+        height: auto;
     }
 
     h1 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .requests_list {
@@ -69,18 +73,13 @@
         width: 100%;
     }
 
-    #user_name,
-    #user_phone,
-    #user_text {
-        width: 100%;
-    }
-
     .send_request {
         width: 100%;
     }
 
     footer {
         flex-direction: column;
+        text-align: center;
     }
 
     .footer_links {
@@ -137,6 +136,52 @@
     }
 }
 
+/* Ноутбуки и средние экраны (769px - 1440px) */
+@media (min-width: 769px) and (max-width: 1440px) {
+    .wrapper {
+        margin: 0 5%;
+    }
+
+    header {
+        height: 60px;
+    }
+
+    .logo_header {
+        padding-left: 50px;
+    }
+
+    nav {
+        padding-right: 50px;
+    }
+
+    .requests_list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .requests_list>li {
+        width: 48%;
+        margin-bottom: 15px;
+    }
+
+    .contact_content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .footer_links {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+
 /* Styles for desktops */
 @media (min-width: 1025px) {
     .wrapper {
@@ -169,59 +214,88 @@
     }
 }
 
-/* Базовые стили для бургер-меню */
+/* Для 2K и больших экранов */
+@media (min-width: 1920px) {
+    .wrapper {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 64px;
+    }
+
+    .requests_list>li {
+        width: 25%;
+    }
+
+    .footer_links>div {
+        width: 300px;
+    }
+}
+
+/* Для Ultra HD (4K) */
+@media (min-width: 2560px) {
+    .wrapper {
+        max-width: 2000px;
+    }
+
+    h1 {
+        font-size: 72px;
+    }
+
+    .requests_list>li {
+        width: 20%;
+    }
+
+    .footer_links>div {
+        width: 350px;
+    }
+}
+
+
+/* Бургер-меню */
 .burger-menu {
     display: none;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 30px;
-    height: 20px;
-    background: none;
-    border: none;
+    height: 25px;
     cursor: pointer;
     z-index: 1010;
 }
 
 .burger-menu span {
-    display: block;
     width: 100%;
     height: 3px;
-    margin-bottom: 3px;
+    margin: 3px 0;
     background-color: white;
     transition: 0.3s;
 }
 
-/* Скрытие меню при узком экране */
-.nav_bar.menu {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-@media (max-width: 1400px) {
+@media (max-width: 1024px) {
     .burger-menu {
         display: flex;
     }
 
-    .nav_bar.menu {
+    .nav_bar {
         display: none;
-        position: absolute;
-        top: 75px;
-        right: 0;
-        background-color: #152c79;
         flex-direction: column;
-        align-items: center;
+        background-color: #152c79;
+        position: absolute;
+        top: 60px;
+        right: 0;
         width: 200px;
         padding: 20px;
-        z-index: 1000;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
 
-    .nav_bar.menu.active {
+    .nav_bar.active {
         display: flex;
     }
 
-    .nav_bar.menu li {
+    .nav_bar li {
         margin: 10px 0;
     }
 
@@ -235,5 +309,27 @@
 
     .burger-menu.active span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+/* Фоновое видео */
+#background-video {
+    /* position: fixed; */
+    /* top: 0;
+    left: 50%; */
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    #background-video {
+        height: 300px;
+    }
+
+    .main_section {
+        height: auto;
     }
 }

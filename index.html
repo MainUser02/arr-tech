@@ -20,24 +20,26 @@
 <body>
   <div class="wrapper">
     <header>
-      <div class="logo_header">
-        <img class="logo" src="media/img/logo.png" alt="logo">
+      <div class="header_wrapper">
+        <div class="logo_header">
+          <img class="logo" src="media/img/logo.png" alt="logo">
+        </div>
+        <nav>
+          <ul class="nav_bar menu">
+            <li class="home"><a href="#">Главная</a></li>
+            <li class="services"><a href="#requests_section">Услуги</a></li>
+            <li class="delivery"><a href="#">Доставка</a></li>
+            <li class="about"><a href="#">О нас</a></li>
+            <li class="request"><a href="#">Оставить заявку</a></li>
+          </ul>
+        </nav>
+        <button class="burger-menu" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-      <nav>
-        <ul class="nav_bar menu">
-          <li class="home"><a href="#">Главная</a></li>
-          <li class="services"><a href="#requests_section">Услуги</a></li>
-          <li class="delivery"><a href="#">Доставка</a></li>
-          <li class="about"><a href="#">О нас</a></li>
-          <li class="request"><a href="#">Оставить заявку</a></li>
-        </ul>
-      </nav>
-      <button class="burger-menu" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </header>    
+    </header>
     <section class="main_section" id="main_section">
       <video autoplay muted loop id="background-video">
         <source src="media/main.mp4" type="video/mp4" />
@@ -340,4 +342,5 @@
   </footer>
   <script src="app/app.js"></script>
 </body>
+
 </html>

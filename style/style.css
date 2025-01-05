@@ -157,14 +157,14 @@ a:hover {
 }
 
 .wrapper {
-  max-width: 1440px;
+  max-width: 76%;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto 0 auto;
   flex-direction: column;
-  margin: 0 12.5% 0 12.2%;
   overflow: hidden;
 }
 
@@ -173,7 +173,7 @@ header {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   height: 75px;
   min-height: 75px;
   position: fixed;
@@ -183,9 +183,16 @@ header {
   /* background-color: #3052eba2; */
 }
 
+.header_wrapper {
+  width: 76%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .logo_header {
   display: flex;
-  padding-left: 230px;
   align-items: center;
 }
 
@@ -198,7 +205,6 @@ nav {
   display: flex;
   min-width: 40%;
   width: 40%;
-  padding-right: 230px;
 }
 
 .nav_bar {
@@ -350,10 +356,9 @@ h1 {
 }
 
 .content_requests_text {
-  max-width: 400px;
   max-height: 150px;
-  width: 400px;
-  height: 150px;
+  width: 21em;
+  height: 10em;
 }
 
 .request_icon {
@@ -454,9 +459,11 @@ footer {
 }
 
 .footer_content {
-  max-width: 1440px;
-  color: #fff;
+  width: 90%;
+  height: 100%;
   display: flex;
+  justify-content: space-between;
+  color: #fff;
   flex-direction: column;
 }
 
@@ -476,7 +483,7 @@ footer {
 }
 
 .logo_footer {
-  max-width: 200px;
+  max-width: 10em;
 }
 
 .footer_copyright {

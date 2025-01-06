@@ -26,101 +26,6 @@
             padding: 15px;
             margin: 10px 0;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .product h2 {
-            margin: 0;
-            font-size: 18px;
-            color: #007BFF;
-        }
-        .product p {
-            margin: 5px 0;
-            color: #555;
-        }
-        .product .price {
-            font-weight: bold;
-            color: #28a745;
-        }
-        .product .stock {
-            color: #dc3545;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Product Catalog</h1>
-        <div id="product-list"></div>
-    </div>
-    <script>
-        const accessToken = 'Xpms9MhbofnPVAVN-yAfW6oudtk41bRy'; // Replace with your actual access token
-
-        // Fetch products from the API
-        fetch(`https://api.al-style.kz/api/elements?access-token=${accessToken}&limit=50`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                const products = data; // Adjust this if the response structure differs
-                const productList = document.getElementById('product-list');
-
-                products.forEach(product => {
-                    const productDiv = document.createElement('div');
-                    productDiv.className = 'product';
-                    productDiv.innerHTML = `
-                        <div>
-                            <h2>${product.name}</h2>
-                            <p><strong>Артикул:</strong> ${product.article}</p>
-                            <p><strong>Цена (розничная):</strong> ${product.price2 || 'По запросу'}</p>
-                        </div>
-                        <div>
-                            <p class="price">Остаток: ${product.quantity}</p>
-                            ${product.isnew ? '<p class="stock">Новинка!</p>' : ''}
-                        </div>
-                    `;
-                    productList.appendChild(productDiv);
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-                const productList = document.getElementById('product-list');
-                productList.innerHTML = '<p>Ошибка загрузки данных. Попробуйте позже.</p>';
-            });
-    </script>
-</body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Catalog</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 90%;
-            margin: 20px auto;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .product {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 10px 0;
-            display: flex;
             flex-direction: column;
         }
         .product h2 {
@@ -197,4 +102,4 @@
 </body>
 </html>
 
-
+ -->

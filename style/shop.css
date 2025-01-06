@@ -1,0 +1,33 @@
+.container {
+    width: 90%;
+    margin: 20px auto;
+    margin-top: 200px;
+}
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+.category {
+    margin-bottom: 30px;
+}
+.category h2 {
+    font-size: 22px;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+.product {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+}
+.product h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #007BFF;
+}
+.product p {
+    margin: 5px 0;
+    color: #555;
+}

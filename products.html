@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        .container {
-            width: 90%;
-            margin: 20px auto;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .product {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 10px 0;
-        }
-        .product h2 {
-            margin: 0;
-            font-size: 18px;
-            color: #007BFF;
-        }
-        .product p {
-            margin: 5px 0;
-            color: #555;
-        }
-    </style>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/responsive.css">
+    <link rel="stylesheet" href="style/products.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
 </head>
+
 <body>
-    <div class="container">
-        <h1>Products</h1>
-        <div id="product-list"></div>
+    <div class="wrapper">
+        <header>
+            <div class="header_wrapper">
+                <div class="logo_header">
+                    <img class="logo" src="media/img/logo.png" alt="logo">
+                </div>
+                <nav>
+                    <ul class="nav_bar menu">
+                        <li class="home nav_btn"><a href="index.html">Главная</a></li>
+                        <li class="services nav_btn"><a href="#requests_section">Услуги</a></li>
+                        <li class="delivery nav_btn"><a href="#">Доставка</a></li>
+                        <li class="about nav_btn"><a href="#">О нас</a></li>
+                        <li class="shop nav_btn"><a href="shop.html">Магазин</a></li>
+                        <li class="request"><a href="#">Оставить заявку</a></li>
+                    </ul>
+                </nav>
+                <button class="burger-menu" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+        <div class="container">
+            <h1>Products</h1>
+            <div id="product-list"></div>
+        </div>
     </div>
     <script>
         const accessToken = 'Xpms9MhbofnPVAVN-yAfW6oudtk41bRy'; // Replace with your actual access token
@@ -53,7 +53,7 @@
             document.getElementById('product-list').innerHTML = '<p>Категория не выбрана.</p>';
         } else {
             // Fetch products for the specific category
-            fetch(`https://api.al-style.kz/api/elements?access-token=${accessToken}&category=${categoryId}`)
+            fetch(`https://api.al-style.kz/api/elements?access-token=${accessToken}&category=${categoryId}&limit=50&additional_fields=description,brand,weight,warranty,images`)
                 .then(response => response.json())
                 .then(products => {
                     const productList = document.getElementById('product-list');
@@ -67,6 +67,10 @@
                         const productDiv = document.createElement('div');
                         productDiv.className = 'product';
                         productDiv.innerHTML = `
+                        ${product.images && product.images.length
+                                ? `<img src="${product.images[0]}" alt="${product.name}">`
+                                : ''
+                            }
                             <h2>${product.name}</h2>
                             <p><strong>Артикул:</strong> ${product.article}</p>
                             <p><strong>Цена (розничная):</strong> ${product.price2 || 'По запросу'}</p>
@@ -82,4 +86,5 @@
         }
     </script>
 </body>
+
 </html>

@@ -11,7 +11,7 @@ fetch(`https://api.al-style.kz/api/categories?access-token=${accessToken}`)
             categoryDiv.className = 'category';
             categoryDiv.innerHTML = `
                 <h2><a href="products.html?category_id=${category.id}">${category.name}</a></h2>
-                <p><strong>Уровень вложенности:</strong> ${category.level}</p>
+                
             `;
             categoryList.appendChild(categoryDiv);
         });
@@ -21,3 +21,5 @@ fetch(`https://api.al-style.kz/api/categories?access-token=${accessToken}`)
         const categoryList = document.getElementById('category-list');
         categoryList.innerHTML = '<p>Ошибка загрузки данных. Попробуйте позже.</p>';
     });
+
+{/* <p><strong>Уровень вложенности:</strong> ${category.level}</p> */}

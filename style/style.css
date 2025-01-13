@@ -156,7 +156,7 @@ a:hover {
   text-decoration: none;
 }
 
-.wrapper {
+.wrapper, .footer_content {
   max-width: 76%;
   width: 100%;
   height: 100%;
@@ -466,6 +466,7 @@ footer {
   justify-content: space-between;
   margin-top: 50px;
   margin-bottom: 50px;
+  width: 100%;
 }
 
 .footer_links>div {
@@ -484,6 +485,11 @@ footer {
 }
 
 .request_link>a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer_mail_contact {
   text-decoration: none;
   color: #fff;
 }

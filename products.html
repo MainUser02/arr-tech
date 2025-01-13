@@ -73,8 +73,7 @@
                             }
                             <h2>${product.name}</h2>
                             <p><strong>Артикул:</strong> ${product.article}</p>
-                            <p><strong>Цена (розничная):</strong> ${product.price2 || 'По запросу'}</p>
-                            <p><strong>Остаток:</strong> ${product.quantity}</p>
+                            <p><strong>Цена:</strong> ${product.price2 || 'По запросу'}</p>
                         `;
                         productList.appendChild(productDiv);
                     });
@@ -88,3 +87,6 @@
 </body>
 
 </html>
+
+
+<!-- <p><strong>Остаток:</strong> ${product.quantity}</p> -->

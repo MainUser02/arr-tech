@@ -6,7 +6,7 @@
         font-size: 14px;
     }
 
-    .wrapper {
+    .wrapper, .footer_content {
         margin: 0 auto 0 auto;
         width: 100%;
         max-width: 90%;
@@ -104,7 +104,7 @@
 
 /* Styles for tablets */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .wrapper {
+    .wrapper, .footer_content {
         margin: 0 10%;
         width: 100%;
         max-width: none;
@@ -157,7 +157,7 @@
 
 /* Ноутбуки и средние экраны (769px - 1440px) */
 @media (min-width: 769px) and (max-width: 1440px) {
-    .wrapper {
+    .wrapper, .footer_content {
         margin: 0 auto 0 auto;
         width: 100%;
         max-width: 90%;
@@ -202,7 +202,7 @@
 }
 
 @media (min-width: 1441px) and (max-width: 1919px) {
-    .wrapper {
+    .wrapper, .footer_content {
         margin: 0 auto 0 auto;
         width: 100%;
         max-width: 90%;
@@ -280,7 +280,7 @@
 
 /* Для 2K и больших экранов */
 @media (min-width: 1921px) {
-    .wrapper {
+    .wrapper, .footer_content {
         max-width: 1600px;
         margin: 0 auto;
         width: 100%;
@@ -301,7 +301,7 @@
 
 /* Для Ultra HD (4K) */
 @media (min-width: 2560px) {
-    .wrapper {
+    .wrapper, .footer_content {
         max-width: 2000px;
         width: 100%;
     }
